@@ -2,10 +2,6 @@ package com.ferreiratech.dsList.dto;
 
 import com.ferreiratech.dsList.entities.Game;
 import com.ferreiratech.dsList.projections.GameMinProjection;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
 public class GameMinDTO {
 
@@ -33,7 +29,7 @@ public class GameMinDTO {
     public GameMinDTO(GameMinProjection projection) {
         this.id = projection.getId();
         this.title = projection.getTitle();
-        this.year = projection.getYear();
+        this.year = projection.getGameYear();
         this.imgUrl = projection.getImgUrl();
         this.shortDescription = projection.getShortDescription();
     }
