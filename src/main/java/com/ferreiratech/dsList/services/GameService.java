@@ -25,4 +25,9 @@ public class GameService {
     public GameDTO findById(Long id) {
         return repository.findById(id).map(GameDTO::new).orElse(null);
     }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long id) {
+        return repository.searchByList(id).stream().map(GameMinDTO::new).collect(Collectors.toList());
+    }
 }
